@@ -1,0 +1,128 @@
+sup {
+  color: blue;
+}
+
+.spinner {
+  background-image: asset-url('ajax-loader.gif');
+  display: none;
+}
+
+a.active {
+  background: #3276B1;
+  color: white;
+}
+
+.rotate {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+  #position: absolute;
+
+  max-width: 50px !important;
+  min-width: 50px !important;
+  width: 50px !important;
+  height: 200px;
+  white-space: nowrap;
+  background-color: white !important;
+
+  transform-origin: 180% 40%;
+  #height: 100px;
+  #display: inline-block;
+  #white-space: nowrap;
+  #width: 10px;
+  #float: left;
+  z-index: -100000;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.sides_padding {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.icon18 {
+  font-size: 18px;
+}
+
+.spacer5 { height: 5px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer10 { height: 10px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer15 { height: 15px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer20 { height: 20px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer25 { height: 25px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer30 { height: 30px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer35 { height: 35px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer40 { height: 40px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer45 { height: 45px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer50 { height: 50px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer100 { height: 100px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+.spacer200 { height: 200px; width: 100%; font-size: 0; margin: 0; padding: 0; border: 0; display: block; }
+
+.input_best {
+  border-spacing: 0;
+  width: 100px;
+  text-align: right;
+}
+
+.important_cell {
+  font-weight: bold;
+}
+
+table.table.table-striped tr.highlight_row td {
+  background-color: #FFEBAD;
+}
+
+.red {
+  color: red;
+}
+
+/*input file -----------*/
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  line-height: inherit;
+  /* 20px */
+  white-space: nowrap;
+  cursor: pointer;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.no-js .inputfile + label {
+  display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+  outline: none;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label * {
+  /* pointer-events: none; */
+  /* in case of FastClick lib use */
+}
+
+.inputfile + label svg {
+  width: 1em;
+  height: 1em;
+  vertical-align: middle;
+  fill: currentColor;
+  margin-top: -0.25em;
+  /* 4px */
+  margin-right: 0.25em;
+  /* 4px */
+}
+
+

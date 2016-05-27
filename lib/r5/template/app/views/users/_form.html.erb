@@ -1,0 +1,64 @@
+<%= form_for(@user, :html => { :class => "form-horizontal" }) do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger alert-dismissable">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <ul>
+        <% @user.errors.messages.each do |msg| %>
+          <li><%= msg[1].first %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="col-lg-8">
+    <div class="form-group">
+      <%= f.label :login, 'Login', :class => "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :login, :class => "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :email, 'E-mail', :class => "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :email, :class => "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :firstname, 'Jméno', :class => "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :firstname, :class => "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :lastname, 'Příjmení', :class => "col-sm-2 control-label" %>
+      <div class="col-sm-6">
+        <%= f.text_field :lastname, :class => "form-control" %>
+      </div>
+    </div>
+
+    <% if params[:action] == 'new' || params[:action] == 'create' %>
+    <div class="form-group">
+      <%= f.label :password, 'Heslo', :class => "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+        <%= f.password_field :password, :class => "form-control" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.label :password_confirmation, 'Potvrzení hesla', :class => "col-sm-2 control-label" %>
+      <div class="col-sm-4">
+        <%= f.password_field :password_confirmation, :class => "form-control" %>
+      </div>
+    </div>
+    <% end %>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-6">
+        <%= f.submit 'Uložit', class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>

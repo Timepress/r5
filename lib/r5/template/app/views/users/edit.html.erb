@@ -1,0 +1,10 @@
+<div class="page-header">
+  <%= delete_button @user, 'Opravdu chcete uživatel odstranit?' %>
+  <%= link_to users_path, :class => 'btn btn-default' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Zpět
+  <% end %>
+  <h1>Úprava uživatele</h1>
+</div>
+
+<%= render 'form' %>

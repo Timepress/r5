@@ -1,0 +1,7 @@
+#alert_window {
+  position:absolute; display:block; border:1px solid black; margin:100px 200px 0 200px;
+  padding: 15px 20px; width:50%; height:auto; background-color: white;
+}
+
+#alert_window #alert_header {font-size: 120%}
+#alert_window #alert_close_anchor {float:right}

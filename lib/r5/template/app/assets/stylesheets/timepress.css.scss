@@ -1,0 +1,127 @@
+@media (min-width: 1200px) {
+  .container-small {
+    width: 700px;
+  }
+  .container-large {
+    width: 1320px;
+  }
+}
+
+.container-small, .container-large {
+  max-width: 100%;
+}
+
+.table-responsive {
+  border-top: 1px solid #D0D3D4;
+  padding: 15px;
+  padding-bottom: 6px;
+  background: #fff;
+}
+.vertical-divider {
+  border-top: 1px solid #4E5D6C;
+  -webkit-box-shadow: inset 0px 1px 0px 0px rgba(78,93,108,1);
+  -moz-box-shadow: inset 0px 1px 0px 0px rgba(78,93,108,1);
+  box-shadow: inset 0px 1px 0px 0px rgba(198, 201, 203, 1);
+}
+
+.price-diff, .daylight-saving {
+  position: relative;
+}
+
+.price-diff:after {
+  content: " ";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 8px;
+  left: 100%;
+  border-style: solid;
+  border-width: 4px 0 4px 5px;
+  border-color: transparent transparent transparent #eb2a2a;
+}
+
+.daylight-saving:after {
+  content: " ";
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 8px;
+  right: 0;
+  border-style: solid;
+  border-width: 4px 5px 4px 0;
+  border-color: transparent #31afd5 transparent transparent;
+}
+
+.period-select {
+  border-top: 1px solid #D0D3D4;
+  padding: 10px 15px;
+  background: #f0f0f0;
+  padding-bottom: 6px;
+  margin-bottom: 0px;
+  font-weight: 300;
+  overflow-x: auto;
+  white-space: nowrap;
+  .period-list {
+    overflow: auto;
+  }
+  span.year {
+    display: inline;
+    border-radius: 3px;
+    background: #4E5D6C;
+    color: #fff;
+    padding: 0 3px;
+    margin-right: 5px;
+  }
+  table {
+    a {
+      font-weight: 300;
+      color: #428bca;
+      display: inline;
+    }
+    a.active {
+      background: #DF691A;
+      color: white;
+      padding: 0 3px;
+      border-radius: 3px;
+    }
+    a:hover {
+      background: #31AFD5;
+      color: white;
+      padding: 0 3px;
+      border-radius: 3px;
+      text-decoration: none;
+    }
+  }
+}
+
+
+.period-select .mCSB_horizontal.mCSB_inside > .mCSB_container {
+  margin-bottom: 17px;
+  margin-right: 0;
+}
+
+.period-select.mCS_no_scrollbar .mCSB_horizontal.mCSB_inside > .mCSB_container {
+  margin-bottom: 0px;
+}
+
+.mCSB_scrollTools.mCSB_scrollTools_horizontal {
+  border-top: 1px dotted #D0D3D4;
+  padding-top: 5px;
+  height: 21px;
+}
+
+.period-select .mCSB_scrollTools.mCSB_scrollTools_horizontal {
+  border: none;
+  padding-top: 6px;
+}
+
+.mCSB_scrollTools.mCSB_scrollTools_horizontal a + .mCSB_draggerContainer {
+  margin-top: 6px;
+}
+
+.form {
+  background: #fff;
+  border-top: 1px solid #D0D3D4;
+  padding: 15px 0;
+  margin-bottom: 30px;
+}
