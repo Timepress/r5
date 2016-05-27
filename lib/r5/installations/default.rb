@@ -44,8 +44,6 @@ run 'git init'
 run 'git add .'
 run "git commit -a -m 'Initial commit'"
 
-rake 'app:bootstrap'
-
 todo =
 <<TEXT
 Check mail configuration in config/environments/production.rb for your server

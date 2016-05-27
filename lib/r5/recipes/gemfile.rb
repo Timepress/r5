@@ -1,5 +1,5 @@
 gemfile = "#{@project_path}/Gemfile"
-gsub_file gemfile, "gem 'sqlite3'", "gem 'mysql2', '0.3.18'"
+gsub_file gemfile, "gem 'sqlite3'", "gem 'mysql2'"
 
 insert_into_file gemfile, after: "group :development, :test do\n" do
   <<EOF
@@ -11,6 +11,7 @@ insert_into_file gemfile, after: "group :development, :test do\n" do
 EOF
 end
 
+begin
 insert_into_file gemfile, after: "group :development do\n" do
   <<EOF
   gem 'better_errors'
@@ -18,6 +19,8 @@ insert_into_file gemfile, after: "group :development do\n" do
   gem 'meta_request'
   gem 'bullet'
 EOF
+end
+
 end
 
 append_to_file gemfile do
@@ -30,5 +33,9 @@ end
 gem 'font-awesome-rails'
 gem 'quiet_assets'
 gem 'jquery-ui-rails'
+
+# make content_tag temporarily available
+gem 'record_tag_helper', '~> 1.0'
 EOF
 end
+

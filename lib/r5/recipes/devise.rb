@@ -37,7 +37,7 @@ RUBY
 end
 
 insert_into_file "#{@project_path}/app/models/user.rb",
-                 after: "class User < ActiveRecord::Base\n" do <<-RUBY
+                 after: "class User < ApplicationRecord\n" do <<-RUBY
     def display_name
       [firstname, lastname].join(' ')
     end
