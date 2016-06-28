@@ -9,6 +9,7 @@ development:
   pool: 5
   username: #{Config.settings['mysql']['user']}
   password: #{Config.settings['mysql']['password']}
+  host: #{Config.settings['mysql']['host']}
 
 test:
   adapter: mysql2
@@ -17,6 +18,7 @@ test:
   pool: 5
   username: #{Config.settings['mysql']['user']}
   password: #{Config.settings['mysql']['password']}
+  host: #{Config.settings['mysql']['host']}
   EOF
   end
 end
