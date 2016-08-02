@@ -31,7 +31,6 @@ group :test do
 end
 
 gem 'font-awesome-rails'
-gem 'quiet_assets'
 gem 'jquery-ui-rails'
 
 # make content_tag temporarily available

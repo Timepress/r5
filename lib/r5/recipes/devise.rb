@@ -15,10 +15,8 @@ insert_into_file "#{@project_path}/app/controllers/application_controller.rb",
     protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.for(:sign_in) { |u| u.permit(:login, :password, :remember_me) }
-      devise_parameter_sanitizer.for(:account_update) { |u|
-        u.permit(:password, :password_confirmation, :current_password)
-      }
+      devise_parameter_sanitizer.permit(:sign_in, keys: [:login, :password, :remember_me])
+      devise_parameter_sanitizer.permit(:account_update, keys: [:password, :password_confirmation, :current_password])
     end
 
     def only_for_user
