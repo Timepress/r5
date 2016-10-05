@@ -102,6 +102,11 @@ class Starter < Thor
       copy_file filename, "#{@project_path}/#{filename}"
     end
 
+    def my_directory path
+      # rewriting thor directory method
+      directory path, "#{@project_path}/#{path}"
+    end
+
     def remove filename
       remove_file "#{@project_path}/#{filename}"
     end

@@ -10,6 +10,8 @@ copy 'app/assets/stylesheets/theme.css'
 copy 'app/assets/stylesheets/custom.css.scss'
 copy 'app/assets/stylesheets/timepress.css.scss'
 
+my_directory 'app/assets/fonts'
+
 remove 'app/views/layouts/application.html.erb'
 copy 'app/views/layouts/application.html.erb'
 
