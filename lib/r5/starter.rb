@@ -57,7 +57,7 @@ class Starter < Thor
     apply 'recipes/xlsx_support.rb'
   end
 
-  desc 'add_charts_support', 'add gems for charts creating'
+  desc 'add_lazy_charts', 'add gems for charts creating'
   def add_lazy_charts
     apply 'recipes/lazy_high_charts.rb'
   end
