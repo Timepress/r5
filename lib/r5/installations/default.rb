@@ -1,6 +1,6 @@
 # DEFAULT SETTINGS
-# TODO check ruby version on system and use it in ruby version
 copy '.ruby-version'
+gsub_file "#{@project_path}/.ruby-version", /version/, RUBY_VERSION
 apply 'recipes/gemfile.rb'
 run 'bundle check && bundle install'
 
