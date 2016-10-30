@@ -8,6 +8,10 @@ class Starter < Thor
 
   def initialize(*args)
     super
+    unless File.exists? "#{Dir.home}/.r5.yml"
+      say "Need to create config file - answer following question", :green
+      create_config_file
+    end
     if ARGV[0] =~ /new/
       @dir = `pwd`.gsub("\n", '')
     elsif ARGV[0] =~ /add/
@@ -93,6 +97,27 @@ class Starter < Thor
 
   # local helpers
   no_commands do
+    require 'yaml'
+    def create_config_file
+      settings = Hash.new {|h,k| h[k] = Hash.new(&h.default_proc) }
+      settings['mysql']['user'] = ask("Insert name of mysql user:")
+      settings['mysql']['password'] = ask("Insert password for mysql user:")
+      settings['mysql']['host'] = ask("Host of mysql user:", default: 'localhost')
+      settings['admin']['login'] = ask("Login of default admin user:", default: 'admin')
+      settings['admin']['password'] = ask("Password of default password:", default: 'password')
+      settings['admin']['email'] = ask("E-mail of default user:", default: 'admin@example.com')
+      settings['admin']['lastname'] = ask("Lastname of default user:", default: 'administrator')
+      settings['notifier']['email'] = ask("Email for exception notification:", default: 'code@example.com')
+      settings['server']['name_prod'] = ask("Production server adddress:")
+      settings['server']['name_stage'] = ask("Stage server address:")
+      settings['server']['port'] = ask("SSH port for both:")
+      settings['server']['user'] = ask("Name of user on servers:")
+
+      File.open("#{Dir.home}/.r5.yml", 'w') do |file|
+        file.write(settings.to_yaml)
+      end
+    end
+
     def source_paths
       root_path = File.dirname __FILE__
       [root_path + '/template', root_path]
