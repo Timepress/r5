@@ -1,18 +1,18 @@
 namespace :server do
-  STAGE_SERVER = "STAGE_SERVER"
-  PROD_SERVER = "PROD_SERVER_"
-  PORT_NUMBER = "PORT_NUMBER"
+  STAGE = "STAGE_SERVER"
+  PRODUCTION = "PROD_SERVER"
+  PORT = "PORT_NUMBER"
 
   SERVER_DIR = '/home/www/PROJECT_DIR'
 
   desc 'Uploads to production server'
   task :upload_production => :environment do
-    app_upload "-p#{PORT} USER_NAME@#{PROD_SERVER}"
+    app_upload "-p#{PORT} USER_NAME@#{PRODUCTION}"
   end
 
   desc 'Uploads to stage server'
   task :upload => :environment do
-    app_upload "-p#{PORT} USER_NAME@#{STAGE_SERVER}"
+    app_upload "-p#{PORT} USER_NAME@#{STAGE}"
   end
 
   def app_upload server_ssh
