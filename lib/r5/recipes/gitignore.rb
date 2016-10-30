@@ -4,5 +4,6 @@ append_to_file "#{@project_path}/.gitignore" do
 /log/*.log
 /tmp
 /db/schema.rb
+.ruby-version
 EOF
 end
