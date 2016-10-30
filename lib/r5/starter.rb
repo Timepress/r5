@@ -12,6 +12,13 @@ class Starter < Thor
       say "Need to create config file - answer following question", :green
       create_config_file
     end
+
+    unless Config.check_settings.empty?
+      say Config.check_settings, :green
+      say 'Check structure of your config file - it seems you are missing required options mentioned above', :red
+      abort
+    end
+
     if ARGV[0] =~ /new/
       @dir = `pwd`.gsub("\n", '')
     elsif ARGV[0] =~ /add/
