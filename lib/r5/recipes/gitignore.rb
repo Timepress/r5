@@ -5,5 +5,6 @@ append_to_file "#{@project_path}/.gitignore" do
 /tmp
 /db/schema.rb
 .ruby-version
+Gemfile.lock
 EOF
 end
