@@ -30,6 +30,7 @@ Gem expects config file in home directory named .r5.yml, which should contain fo
 mysql:
   user: 'mysql_user_name'
   password: 'mysql_password'
+  host: localhost
 
 admin:
   login: 'default_admin_login'
@@ -41,18 +42,21 @@ notifier:
   email: 'email@for_exception.notifier'
 
 server:
-  name: 'server_name_for_deploy_script'
+  name_prod: 'production_server_name_for_deploy_script'
+  name_stage: 'staging_server_name_for_deploy_script'
   port: 'ssh_port_number'
   user: 'server_user_for_deploy'
 ```
 
+If you don't have such file at all, program will run wizard to guide you through creating it.
+
 Then you can create new application with r5 new name_of_app.
-Custom installations types can be specified in 'installations' directory.
+Custom installations types can be specified in 'installations' directory. As for now you need to 
+create those custom installation directly in source code of r5.
 
 ## TODO
 
 1. provide deploy.sh for upload.rake task to actually work for others
-2. Add testing for Rails presence before running installation
 
 ## Development
 
