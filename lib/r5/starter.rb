@@ -58,6 +58,11 @@ class Starter < Thor
     end
   end
 
+  desc 'add_timepress_specifics', 'add datepicker and other timepress specific things'
+  def add_timepress_specifics
+    apply 'recipes/timepress_specifics.rb'
+  end
+
   desc 'add_wicked_pdf', 'add pdf generation to project'
   def add_wicked_pdf
     apply 'recipes/wicked_pdf.rb'
