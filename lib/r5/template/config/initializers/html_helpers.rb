@@ -86,7 +86,7 @@ module ApplicationHelper
   end
 
   def delete_button objekt, text
-    link_to 'Odstranit', objekt, method: :delete, data: { confirm: text }, class: 'btn btn-danger pull-right' if params[:action] == 'edit'
+    link_to 'Delete', objekt, method: :delete, data: { confirm: text }, class: 'btn btn-danger pull-right' if params[:action] == 'edit'
   end
 
   def session_debug
