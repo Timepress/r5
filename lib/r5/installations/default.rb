@@ -40,7 +40,7 @@ layout_file = "#{@project_path}/app/views/layouts/application.html.erb"
 remove 'app/views/layouts/application.html.erb'
 copy 'app/views/layouts/application.html.erb'
 apply 'recipes/mail_settings.rb'
-apply 'recipes/timepress_generators.rb'
+apply 'recipes/timepress_specifics.rb'
 gsub_file layout_file, 'PROJECT_NAME', @project_name
 apply 'recipes/gitignore.rb'
 run 'git init'

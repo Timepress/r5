@@ -6,7 +6,7 @@ class <%= controller_class_name %>Controller < ApplicationController
   before_action :set_<%= singular_table_name %>, only: [:show, :edit, :update, :destroy]
   # GET <%= route_url %>
   def index
-    @<%= plural_table_name %> = <%= orm_class.all(class_name) %>
+    @<%= plural_table_name %> = <%= class_name %>.active
   end
   # GET <%= route_url %>/1
   def show
@@ -41,8 +41,8 @@ if @<%= orm_instance.save %>
   end
   # DELETE <%= route_url %>/1
 def destroy
-  @<%= orm_instance.destroy %>
-    redirect_to <%= index_helper %>_url, notice: <%= "'#{human_name} was successfully destroyed.'" %>
+  @<%= orm_instance.update("archived_at: Time.now") %>
+    redirect_to <%= index_helper %>_url, notice: <%= "'#{human_name} was successfully archived.'" %>
   end
   private
     # Use callbacks to share common setup or constraints between actions.
