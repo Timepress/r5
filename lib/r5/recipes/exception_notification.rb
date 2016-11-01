@@ -1,6 +1,6 @@
 add_gem 'exception_notification'
 
-run 'bundle check && bundle install'
+run 'bundle install'
 
 config_file = "#{@project_path}/config/initializers/exception_notification.rb"
 

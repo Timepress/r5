@@ -2,7 +2,7 @@
 copy '.ruby-version'
 gsub_file "#{@project_path}/.ruby-version", /version/, RUBY_VERSION
 apply 'recipes/gemfile.rb'
-run 'bundle check && bundle install'
+run 'bundle install'
 
 copy 'config/initializers/html_helpers.rb'
 copy 'config/locales/cs.yml'

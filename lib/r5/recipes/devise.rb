@@ -2,7 +2,7 @@
 # TODO add checking for existing devise in project
 add_gem 'devise'
 
-run 'bundle check && bundle install'
+run 'bundle install'
 run 'rails g devise:install'
 run 'rails g devise User'
 

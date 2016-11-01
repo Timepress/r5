@@ -4,7 +4,7 @@ return say('Wicked_pdf already installed', :red) if File.exists?(wicked_pdf_conf
 
 add_gem 'wicked_pdf'
 add_gem 'wkhtmltopdf-binary'
-run 'bundle check && bundle install'
+run 'bundle install'
 run 'rails generate wicked_pdf'
 
 say "CHECK https://github.com/mileszs/wicked_pdf", :green

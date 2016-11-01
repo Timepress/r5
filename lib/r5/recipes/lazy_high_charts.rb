@@ -1,6 +1,6 @@
 # TODO check for existence of it
 add_gem 'lazy_high_charts'
-run 'bundle check && bundle install'
+run 'bundle install'
 insert_into_file "#{@project_path}/app/assets/javascripts/application.js",
                  after: "//= require_tree .\n" do
   <<EOF
