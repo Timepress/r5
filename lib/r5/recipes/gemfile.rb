@@ -18,6 +18,8 @@ insert_into_file gemfile, after: "group :development do\n" do
   gem 'binding_of_caller'
   gem 'meta_request'
   gem 'bullet'
+  gem 'pry'
+  gem 'pry-byebug'
 EOF
 end
 

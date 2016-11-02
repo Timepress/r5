@@ -68,6 +68,11 @@ class Starter < Thor
     apply 'recipes/timepress_specifics.rb'
   end
 
+  desc 'add_rack_mini_profiler', 'add profiling tool to help you keep an eye on performance'
+  def add_rack_mini_profiler
+    apply 'recipes/add_rack_mini_profiler.rb'
+  end
+
   desc 'add_wicked_pdf', 'add pdf generation to project'
   def add_wicked_pdf
     apply 'recipes/wicked_pdf.rb'
@@ -157,6 +162,10 @@ class Starter < Thor
       append_to_file "#{@project_path}/Gemfile" do
         "\ngem '#{name}'"
       end
+    end
+
+    def check_gem_existence name
+      File.read("#{@project_path}/Gemfile") =~ /#{name}/
     end
   end
 
