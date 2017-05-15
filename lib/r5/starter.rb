@@ -13,8 +13,8 @@ class Starter < Thor
       create_config_file
     end
 
-    if `rails -v` =~ /command not found/ or !(`rails -v` =~ /Rails 5.*/)
-      say "You didn't install Rails or have version lower than 5.0.0. Please install proper version.", :red
+    if `rails -v` =~ /command not found/ or !(`rails -v` =~ /Rails 5.1.*/)
+      say "You didn't install Rails or have version lower than 5.1 Please install proper version.", :red
       abort
     end
 

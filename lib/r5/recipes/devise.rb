@@ -44,6 +44,8 @@ RUBY
 
 end
 
+gsub_file "#{@project_path}/app/models/user.rb", ', :registerable', ''
+
 #TODO check for devise
 user_migrate_filename = Dir.glob("#{@project_path}/db/migrate/*devise_create_users.rb").first
 unless File.open(user_migrate_filename).read=~/string :login/
