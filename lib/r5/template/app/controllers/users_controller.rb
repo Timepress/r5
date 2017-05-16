@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_filter :only_for_admin, except: [:edit_own_password, :update_password]
+  before_action :only_for_admin, except: [:edit_own_password, :update_password]
 
   # GET /users
   # GET /users.json
