@@ -7,8 +7,7 @@ run 'rails g devise:install'
 run 'rails g devise User'
 
 insert_into_file "#{@project_path}/app/controllers/application_controller.rb",
-                 after: "class ApplicationController < ActionController::Base\n" do <<-RUBY
-    protect_from_forgery with: :exception
+                 after: "protect_from_forgery with: :exception\n" do <<-RUBY
     before_action :configure_permitted_parameters, if: :devise_controller?
     before_action :authenticate_user!
 
