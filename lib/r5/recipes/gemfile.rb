@@ -32,9 +32,6 @@ group :test do
   gem 'capybara'
 end
 
-gem 'font-awesome-rails'
-gem 'jquery-ui-rails'
-
 # make content_tag temporarily available
 gem 'record_tag_helper', '~> 1.0'
 EOF

@@ -9,8 +9,8 @@ copy 'config/locales/cs.yml'
 copy 'app/assets/stylesheets/theme.css'
 copy 'app/assets/stylesheets/custom.css.scss'
 copy 'app/assets/stylesheets/timepress.css.scss'
-
-my_directory 'app/assets/fonts'
+copy 'app/assets/stylesheets/bootstrap-variables.scss'
+copy 'app/assets/stylesheets/bootstrap-generators.scss'
 
 remove 'app/views/layouts/application.html.erb'
 copy 'app/views/layouts/application.html.erb'

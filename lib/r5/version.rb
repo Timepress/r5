@@ -1,3 +1,3 @@
 module R5
-  VERSION = "0.2.6.2"
+  VERSION = "0.3.0.0"
 end
