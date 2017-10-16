@@ -13,9 +13,6 @@ copy 'config/locales/cs.yml'
 #copy 'app/assets/stylesheets/bootstrap-variables.scss'
 #copy 'app/assets/stylesheets/bootstrap-generators.scss'
 
-#remove 'app/views/layouts/application.html.erb'
-copy 'app/views/layouts/application_materialize.html.erb', 'application.html.erb'
-
 apply 'recipes/bootstrap_app.rb'
 apply 'recipes/upload_app.rb'
 gsub_file "#{@project_path}/lib/tasks/upload.rake", /PROJECT_DIR/, @project_name
@@ -39,7 +36,7 @@ apply 'recipes/devise.rb'
 apply 'recipes/materialize.rb'
 layout_file = "#{@project_path}/app/views/layouts/application.html.erb"
 remove 'app/views/layouts/application.html.erb'
-copy 'app/views/layouts/application.html.erb'
+copy 'app/views/layouts/application_materialize.html.erb', 'app/views/layouts/application.html.erb'
 apply 'recipes/mail_settings.rb'
 apply 'recipes/timepress_specifics.rb'
 apply 'recipes/add_rack_mini_profiler.rb'
