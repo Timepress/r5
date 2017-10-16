@@ -16,20 +16,20 @@
   <% if attribute.field_type == :textarea %>
     <div class="row">
       <div class="input-field col s12">
-        <%= f.text_area :<%= attribute.name %>, class: "materialize-textarea" %>
-        <%= f.label :<%= attribute.name %> %>
+        <%%= f.text_area :<%= attribute.name %>, class: "materialize-textarea" %>
+        <%%= f.label :<%= attribute.name %> %>
       </div>
     </div>
   <% else %>
     <div class="row">
       <div class="input-field col s12">
-        <%= f.text_field :<%= attribute.name %> %>
-        <%= f.label :<%= attribute.name %> %>
+        <%%= f.text_field :<%= attribute.name %> %>
+        <%%= f.label :<%= attribute.name %> %>
       </div>
     </div>
   <% end %>
 <% end -%>
   <div class="row">
-    <%= f.submit 'Save', class: "waves-effect waves-light btn" %>
+    <%%= f.submit 'Save', class: "waves-effect waves-light btn" %>
   </div>
 <%% end %>
