@@ -2,6 +2,7 @@
 insert_into_file "#{@project_path}/config/application.rb",
                  after: "class Application < Rails::Application\n" do <<-EOF
       config.generators do |g|
+            g.scaffold_stylesheet false
             g.test_framework :rspec,
               :fixtures => true,
               :view_specs => false,
