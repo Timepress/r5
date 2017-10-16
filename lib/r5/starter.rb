@@ -156,7 +156,7 @@ class Starter < Thor
     end
 
     def copy filename, destination_name=nil
-      new_name = filename unless destination_name
+      new_name = destination_name ? destination_name : filename
       copy_file filename, "#{@project_path}/#{new_name}"
     end
 

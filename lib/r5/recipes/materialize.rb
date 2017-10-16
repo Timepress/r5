@@ -5,14 +5,14 @@ system "yarn add materialize-css jquery moment"
 insert_into_file "#{@project_path}/app/assets/stylesheets/application.css",
 before: "\n *= require_tree ." do <<-TXT
 
-*= require materialize/dist/css/materialize
+*= require materialize-css/dist/css/materialize
 TXT
 end
 
 insert_into_file "#{@project_path}/app/assets/javascripts/application.js",
 before: "\n//= require_tree ." do <<-TXT
 
-//= require materialize/dist/js/materialize
+//= require materialize-css/dist/js/materialize
 //= require moment/min/moment-with-locales
 TXT
 end
