@@ -155,8 +155,9 @@ class Starter < Thor
       [root_path + '/template', root_path]
     end
 
-    def copy filename
-      copy_file filename, "#{@project_path}/#{filename}"
+    def copy filename, destination_name=nil
+      new_name = filename unless destination_name
+      copy_file filename, "#{@project_path}/#{new_name}"
     end
 
     def my_directory path

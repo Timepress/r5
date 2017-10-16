@@ -1,4 +1,4 @@
-# DEFAULT SETTINGS
+# BOOTSRAP VERSION
 copy '.ruby-version'
 gsub_file "#{@project_path}/.ruby-version", /version/, RUBY_VERSION
 apply 'recipes/gemfile.rb'
@@ -13,7 +13,7 @@ copy 'app/assets/stylesheets/bootstrap-variables.scss'
 copy 'app/assets/stylesheets/bootstrap-generators.scss'
 
 remove 'app/views/layouts/application.html.erb'
-copy 'app/views/layouts/application_materialize.html.erb', 'app/views/layouts/application.html.erb'
+copy 'app/views/layouts/application_bootstrap.html.erb', 'app/views/layouts/application.html.erb'
 
 apply 'recipes/bootstrap_app.rb'
 apply 'recipes/upload_app.rb'
@@ -35,7 +35,7 @@ rake 'db:drop'
 rake 'db:create'
 
 apply 'recipes/devise.rb'
-apply 'recipes/materialize.rb'
+apply 'recipes/bootstrap.rb'
 layout_file = "#{@project_path}/app/views/layouts/application.html.erb"
 remove 'app/views/layouts/application.html.erb'
 copy 'app/views/layouts/application.html.erb'
