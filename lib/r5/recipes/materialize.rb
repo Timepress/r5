@@ -17,6 +17,27 @@ before: "\n//= require_tree ." do <<-TXT
 TXT
 end
 
+
+create_file "#{@project_path}/config/webpack/custom.js" do <<-JS
+  const webpack = require('webpack')
+  
+  module.exports = {
+    resolve: {
+      alias: {
+        jquery: 'jquery/src/jquery',
+      }
+    },
+  }
+  
+  // config/webpack/development.js
+  const merge = require('webpack-merge')
+  const environment = require('./environment')
+  const customConfig = require('./custom')
+  
+  module.exports = merge(environment.toWebpackConfig(), customConfig)
+JS
+end
+
 insert_into_file "#{@project_path}/app/javascript/packs/application.js",
                  after: "console.log('Hello World from Webpacker')" do <<-JS
                  
@@ -25,32 +46,26 @@ window.jQuery = jQuery
 
 let ready;
 ready = function() {
-  $(".datepicker").datetimepicker({locale: 'cs', format: 'D. M. YYYY'});
+  // $(".datepicker").datetimepicker({locale: 'cs', format: 'D. M. YYYY'});
 };
 // Fire javascript after turbolinks event
 $(document).on('turbolinks:load', ready);
 JS
 end
 
-insert_into_file "#{@project_path}/config/webpack/shared.js",
-                 after: "new ManifestPlugin({ fileName: paths.manifest, publicPath, writeToFileEmit: true })
-  ]," do <<-JS
+insert_into_file "#{@project_path}/config/webpack/environment.js",
+                 after: "const { environment } = require('@rails/webpacker')" do <<-JS
 
-  resolve: {
-    alias: {
-      jquery: "jquery/src/jquery"
-    }
-  },
-JS
-end
-
-insert_into_file "#{@project_path}/config/webpack/shared.js",
-                 after: "new ExtractTextPlugin(env.NODE_ENV === 'production' ? '[name]-[hash].css' : '[name].css')," do <<-JS
-
-  new webpack.ProvidePlugin({
-    $: 'jquery',
-    jQuery: 'jquery',
-    jquery: 'jquery'
-  }),
+  const webpack = require('webpack')
+  
+  // Add an additional plugin of your choosing : ProvidePlugin
+  environment.plugins.set(
+    'Provide',
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      jquery: 'jquery',
+    })
+  )
 JS
 end
