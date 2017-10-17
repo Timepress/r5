@@ -1,22 +1,24 @@
+add_gem 'materialize-sass'
+add_gem 'material_icons'
+
 run 'bundle install'
 
-system "yarn add materialize-css jquery moment"
+system "yarn add jquery moment"
 
 insert_into_file "#{@project_path}/app/assets/stylesheets/application.css",
 before: "\n *= require_tree ." do <<-TXT
-
-*= require materialize-css/dist/css/materialize
+  
+  *= require materialize
+  *= require material_icons
 TXT
 end
 
 insert_into_file "#{@project_path}/app/assets/javascripts/application.js",
 before: "\n//= require_tree ." do <<-TXT
-
-//= require materialize-css/dist/js/materialize
-//= require moment/min/moment-with-locales
+  
+  //= require materialize-sprockets
 TXT
 end
-
 
 create_file "#{@project_path}/config/webpack/custom.js" do <<-JS
   const webpack = require('webpack')
