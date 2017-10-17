@@ -13,12 +13,12 @@ class Starter < Thor
       create_config_file
     end
 
-    if `rails -v` =~ /command not found/ or !(`rails -v` =~ /Rails 5.1.*/)
+    if (system "rails -v").nil? or (%x[rails -v] =~ /Rails 5.1.*/).nil?
       say "You didn't install Rails or have version lower than 5.1 Please install proper version.", :red
       abort
     end
 
-    if `yarn --version` =~ /command not found/
+    if (system "yarn --version").nil?
       say "You need to install yarn on your system to manage javascript assets", :red
       abort
     end
