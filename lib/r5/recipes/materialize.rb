@@ -3,13 +3,14 @@ add_gem 'material_icons'
 
 run 'bundle install'
 
-system "yarn add jquery moment"
+system "yarn add jquery moment snackbarjs"
 
 insert_into_file "#{@project_path}/app/assets/stylesheets/application.css",
 before: "\n *= require_tree ." do <<-TXT
   
   *= require materialize
   *= require material_icons
+  *= require snackbarjs
 TXT
 end
 
@@ -17,6 +18,7 @@ insert_into_file "#{@project_path}/app/assets/javascripts/application.js",
 before: "\n//= require_tree ." do <<-TXT
   
   //= require materialize-sprockets
+  //= snackbarjs
 TXT
 end
 

@@ -6,12 +6,8 @@ run 'bundle install'
 
 copy 'config/initializers/html_helpers.rb'
 copy 'config/locales/cs.yml'
-# copy 'app/assets/stylesheets/theme.css'
-# copy 'app/assets/stylesheets/custom.css.scss'
-# copy 'app/assets/stylesheets/timepress.css.scss'
-# only for bootstrap
-#copy 'app/assets/stylesheets/bootstrap-variables.scss'
-#copy 'app/assets/stylesheets/bootstrap-generators.scss'
+copy 'app/assets/javascripts/custom.js'
+copy 'app/assets/stylesheets/custom.css.scss'
 
 apply 'recipes/bootstrap_app.rb'
 apply 'recipes/upload_app.rb'
