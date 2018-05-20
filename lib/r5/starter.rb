@@ -13,8 +13,8 @@ class Starter < Thor
       create_config_file
     end
 
-    if (system "rails -v").nil? or (%x[rails -v] =~ /Rails 5.1.*/).nil?
-      say "You didn't install Rails or have version lower than 5.1 Please install proper version.", :red
+    if (system "rails -v").nil? or (%x[rails -v] =~ /Rails 5.2.*/).nil?
+      say "You didn't install Rails or have version lower than 5.2 Please install proper version.", :red
       abort
     end
 
@@ -58,8 +58,7 @@ class Starter < Thor
   method_options type: :string
   def new project_name
     @project_name = project_name
-    run "rails new #{@project_name} -T --skip-bundle --webpack"
-    #run 'rake webpacker:install'
+    run "rails new #{@project_name} -T --skip-bundle"
 
     @project_path = "#{@dir}/#{@project_name}"
     @project_label = @project_name.capitalize.gsub('_', ' ')
@@ -73,9 +72,9 @@ class Starter < Thor
       apply "installations/#{options[:type]}.rb"
     end
 
-    run 'gem install foreman'
-    copy 'Procfile'
-    say 'Start your application with foreman start', :green
+    # run 'gem install foreman'
+    # copy 'Procfile'
+    say 'Start your application with rails s', :green
   end
 
   desc 'add_timepress_specifics', 'add datepicker and other timepress specific things'
@@ -174,9 +173,9 @@ class Starter < Thor
       remove_file "#{@project_path}/#{filename}"
     end
 
-    def add_gem name
+    def add_gem name, version=""
       append_to_file "#{@project_path}/Gemfile" do
-        "\ngem '#{name}'"
+         version == "" ? "\ngem '#{name}'" : "\ngem '#{name}', '#{version}'"
       end
     end
 

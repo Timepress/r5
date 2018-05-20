@@ -1,8 +1,12 @@
 # DEFAULT SETTINGS
-copy '.ruby-version'
-gsub_file "#{@project_path}/.ruby-version", /version/, RUBY_VERSION
+
+# gsub_file "#{@project_path}/.ruby-version", /version/, RUBY_VERSION
 apply 'recipes/gemfile.rb'
 run 'bundle install'
+
+# run 'bundle exec rails webpacker:install'
+# system "yarn add @rails/webpacker@4.0.0-pre.2"
+# system "yarn add webpack-cli -D"
 
 copy 'config/initializers/html_helpers.rb'
 copy 'config/locales/cs.yml'
@@ -38,6 +42,7 @@ apply 'recipes/timepress_specifics.rb'
 apply 'recipes/add_rack_mini_profiler.rb'
 gsub_file layout_file, 'PROJECT_NAME', @project_name
 apply 'recipes/gitignore.rb'
+#copy '.ruby-version'
 run 'git init'
 run 'git add .'
 run "git commit -a -m 'Initial commit'"
