@@ -6,8 +6,8 @@ require 'r5/version'
 Gem::Specification.new do |spec|
   spec.name          = "r5"
   spec.version       = R5::VERSION
-  spec.authors       = ["mousse"]
-  spec.email         = ["mousse@timepress.cz"]
+  spec.authors       = %w(mousse sionzee)
+  spec.email         = %w(mousse@timepress.cz honza@timepress.cz)
 
   if spec.respond_to?(:metadata)
     #spec.metadata['allowed_push_host'] = "TODO: Set to 'http://mygemserver.com' to prevent pushes to rubygems.org, or delete to allow pushes to any server."

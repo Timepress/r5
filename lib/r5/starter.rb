@@ -23,11 +23,6 @@ class Starter < Thor
       abort
     end
 
-    if (system "webpack").nil?
-      say "You need to install webpack", :red
-      abort
-    end
-
     unless Config.check_settings.empty?
       say Config.check_settings, :green
       say 'Check structure of your config file - it seems you are missing required options mentioned above', :red
